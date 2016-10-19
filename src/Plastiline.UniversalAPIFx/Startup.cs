@@ -26,6 +26,8 @@ namespace Plastiline.UniversalAPIFx
             }
 
             builder.AddEnvironmentVariables();
+
+
             Configuration = builder.Build();
         }
 
@@ -36,7 +38,7 @@ namespace Plastiline.UniversalAPIFx
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-
+            services.AddSingleton<IConfiguration>(Configuration);
             services.AddMvc();
         }
 
