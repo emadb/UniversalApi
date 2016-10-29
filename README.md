@@ -35,3 +35,5 @@ NOTE
 ---
 By now only SQL Server is supported.
 
+*Developed with :trollface:*
+
