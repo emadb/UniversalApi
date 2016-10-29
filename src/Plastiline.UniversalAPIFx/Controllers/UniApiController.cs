@@ -30,7 +30,7 @@ namespace Plastiline.UniversalAPIFx.Controllers
         [HttpPost, HttpPatch, HttpPatch, HttpDelete]
         public void Post(string q)
         {
-            using (SqlConnection conn = new SqlConnection("Server=.;Database=MyDb;Trusted_Connection=True;MultipleActiveResultSets=true"))
+            using (SqlConnection conn = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
             {
                 conn.Open();
                 conn.Execute(q);
